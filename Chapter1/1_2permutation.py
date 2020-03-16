@@ -37,9 +37,6 @@ def check_permutation(string_one,string_two):
 
     return True
 
-
-    return True
-
 print(check_permutation('dog','god'))
 print(check_permutation('dog','godd'))
 print(check_permutation('aabbccc','cccbbaa'))
