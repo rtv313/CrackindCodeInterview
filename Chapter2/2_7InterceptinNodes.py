@@ -58,5 +58,6 @@ def check_list_intercept(head1,head2):
             return list_dict_nodes[key]
 
     print('The links not intercept')
+    return None
 
 print(str(check_list_intercept(link_list_one.head,link_list_two.head).data))
