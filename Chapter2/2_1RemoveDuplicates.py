@@ -1,7 +1,6 @@
 from LinkedList import LinkedList
 
 link_list = LinkedList()
-
 link_list.add_node(1)
 link_list.add_node(2)
 link_list.add_node(3)
