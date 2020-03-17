@@ -18,6 +18,9 @@ class StackOfPlates():
             self.stacks_list[0].insert(0,data)
 
     def peek(self):
+        if len(self.stacks_list) == 0:
+            return None
+
         value = self.stacks_list[0][0]
         return value
 
@@ -79,19 +82,15 @@ print('Peek:'+str(stack_plates.peek()))
 print('Pop:'+str(stack_plates.pop()))
 stack_plates.print_stacks()
 
-
 print('#####')
 print('Peek:'+str(stack_plates.peek()))
 print('Pop:'+str(stack_plates.pop()))
 stack_plates.print_stacks()
 
-
 print('#####')
 print('Peek:'+str(stack_plates.peek()))
 print('Pop:'+str(stack_plates.pop()))
 stack_plates.print_stacks()
-
-
 
 print('#####')
 print('Peek:'+str(stack_plates.peek()))
