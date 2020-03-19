@@ -3,11 +3,12 @@ class Node():
         self.data = None
         self.next = None
 
+
 class LinkedList():
     def __init__(self):
         self.head = None
 
-    def add_node(self,data):
+    def add_node(self, data):
 
         if self.head == None:
             self.head = Node()

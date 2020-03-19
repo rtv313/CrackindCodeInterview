@@ -10,19 +10,19 @@ link_list_two.add_node(8)
 link_list_two.add_node(8)
 link_list_two.add_node(8)
 
-def sum_lists_easy(list_one,list_two):
 
+def sum_lists_easy(list_one, list_two):
     runner = list_one.head
     str_list_one = ''
     str_list_two = ''
 
     while runner != None:
-        str_list_one+=str(runner.data)
+        str_list_one += str(runner.data)
         runner = runner.next
 
     runner = list_two.head
     while runner != None:
-        str_list_two+=str(runner.data)
+        str_list_two += str(runner.data)
         runner = runner.next
 
     str_list_one = str_list_one[::-1]
@@ -42,4 +42,4 @@ def sum_lists_easy(list_one,list_two):
     return result_list
 
 
-sum_lists_easy(link_list_one,link_list_two).print_list()
+sum_lists_easy(link_list_one, link_list_two).print_list()

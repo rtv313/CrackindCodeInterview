@@ -9,12 +9,13 @@ link_list.add_node(1)
 link_list.add_node(2)
 link_list.add_node(3)
 
-def return_k_last(link_list,k_last):
+
+def return_k_last(link_list, k_last):
     counter = 0
     runner = link_list.head
 
     while runner != None:
-        counter+=1
+        counter += 1
         runner = runner.next
 
     counter -= k_last
@@ -22,13 +23,14 @@ def return_k_last(link_list,k_last):
 
     for x in range(counter):
 
-        if x == counter-1:
+        if x == counter - 1:
             print(runner.data)
             return
 
         runner = runner.next
 
+
 link_list.print_list()
-return_k_last(link_list,2)
-return_k_last(link_list,1)
-return_k_last(link_list,0)
+return_k_last(link_list, 2)
+return_k_last(link_list, 1)
+return_k_last(link_list, 0)

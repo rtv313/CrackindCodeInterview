@@ -1,14 +1,14 @@
-graph = { "a" : ["c"],
-          "b" : ["c", "e"],
-          "c" : ["a", "b", "d", "e"],
-          "d" : ["c"],
-          "e" : ["c", "b"],
-          "f" : []
-        }
+graph = {"a": ["c"],
+         "b": ["c", "e"],
+         "c": ["a", "b", "d", "e"],
+         "d": ["c"],
+         "e": ["c", "b"],
+         "f": []
+         }
+
 
 # Breadth First Search
-def route_between(graph,node_a,node_target):
-
+def route_between(graph, node_a, node_target):
     if node_a not in graph:
         print(node_a + ' this node not exist')
         return
@@ -30,18 +30,18 @@ def route_between(graph,node_a,node_target):
         nodes_visited_queue.append(visited_node)
 
         if visited_node == node_target:
-            print('There is a path between '+ node_a + ' and ' + node_target)
+            print('There is a path between ' + node_a + ' and ' + node_target)
             return
 
         for neighbour in neighbours:
             if nodes_visited_queue.count(neighbour) == 0:
                 nodes_to_visit_queue.append(neighbour)
 
-
-    print('No path between '+ node_a + ' and ' + node_target)
+    print('No path between ' + node_a + ' and ' + node_target)
     return
 
-route_between(graph,'z','e')
-route_between(graph,'a','z')
-route_between(graph,'a','e')
-route_between(graph,'a','f')
+
+route_between(graph, 'z', 'e')
+route_between(graph, 'a', 'z')
+route_between(graph, 'a', 'e')
+route_between(graph, 'a', 'f')

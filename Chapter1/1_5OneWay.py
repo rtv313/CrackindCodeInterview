@@ -1,8 +1,8 @@
-#One Away: There are three types of edits that can be performed on strings:
-#insert a character, remove a character, or replace a character.
-#Given two strings, write a function to check if they are one edit (or zero edits) away
+# One Away: There are three types of edits that can be performed on strings:
+# insert a character, remove a character, or replace a character.
+# Given two strings, write a function to check if they are one edit (or zero edits) away
 
-def check_lens(str_one,str_two):
+def check_lens(str_one, str_two):
     if len(str_one) == len(str_two):
         return 0
 
@@ -11,25 +11,26 @@ def check_lens(str_one,str_two):
 
     return 2
 
+
 def create_dic_set(string):
     dictionary = dict()
     set_chars = set()
     for char in string:
         set_chars.add(char)
         if char in dictionary:
-            dictionary[char]+=1
+            dictionary[char] += 1
         else:
-            dictionary[char]=1
+            dictionary[char] = 1
 
-    return dictionary,set_chars
+    return dictionary, set_chars
 
-def one_way(str_one,str_two):
 
-    type_edit = check_lens(str_one,str_two)
-    dict_one,set_one = create_dic_set(str_one)
-    dict_two,set_two = create_dic_set(str_two)
+def one_way(str_one, str_two):
+    type_edit = check_lens(str_one, str_two)
+    dict_one, set_one = create_dic_set(str_one)
+    dict_two, set_two = create_dic_set(str_two)
 
-    if type_edit == 0: #No add or delete
+    if type_edit == 0:  # No add or delete
 
         dif_set_one = set_one.difference(set_two)
         dif_set_two = set_two.difference(set_one)
@@ -46,7 +47,7 @@ def one_way(str_one,str_two):
 
         return True
 
-    if type_edit == 1: # Delete
+    if type_edit == 1:  # Delete
         if len(str_one) - len(str_two) > 1:
             return False
         else:
@@ -67,9 +68,9 @@ def one_way(str_one,str_two):
 
             return True
 
-    if type_edit == 2: # Add
+    if type_edit == 2:  # Add
 
-        if len(str_two) - len(str_one ) > 1:
+        if len(str_two) - len(str_one) > 1:
             return False
         else:
             for key in dict_one.keys():
@@ -79,20 +80,17 @@ def one_way(str_one,str_two):
             return True
 
 
-print('aabbcc -> aabbcd '+str(one_way('aabbcc','aabbcd'))+':'+'True')
-print('aabbcc -> aabbdd '+str(one_way('aabbcc','aabbdd'))+':'+'False')
-print('ababab -> abbbbb '+str(one_way('ababab','abbbbb'))+':'+'False')
-print('ababab -> ababbb '+str(one_way('ababab','ababbb'))+':'+'True')
-print('ababab -> bbabbb' +str(one_way('ababab','bbabbb'))+':'+'False')
+print('aabbcc -> aabbcd ' + str(one_way('aabbcc', 'aabbcd')) + ':' + 'True')
+print('aabbcc -> aabbdd ' + str(one_way('aabbcc', 'aabbdd')) + ':' + 'False')
+print('ababab -> abbbbb ' + str(one_way('ababab', 'abbbbb')) + ':' + 'False')
+print('ababab -> ababbb ' + str(one_way('ababab', 'ababbb')) + ':' + 'True')
+print('ababab -> bbabbb' + str(one_way('ababab', 'bbabbb')) + ':' + 'False')
 
+print('aabbcc -> aabbc ' + str(one_way('aabbcc', 'aabbc')) + ':' + 'True')
+print('aabbcc -> abbbc ' + str(one_way('aabbcc', 'abbbc')) + ':' + 'False')
+print('aabbcc -> axbbc ' + str(one_way('aabbcc', 'axbbc')) + ':' + 'False')
+print('aabbc -> aabb ' + str(one_way('aabbc', 'aabb')) + ':' + 'True')
 
-print('aabbcc -> aabbc '+str(one_way('aabbcc','aabbc'))+':'+'True')
-print('aabbcc -> abbbc '+str(one_way('aabbcc','abbbc'))+':'+'False')
-print('aabbcc -> axbbc '+str(one_way('aabbcc','axbbc'))+':'+'False')
-print('aabbc -> aabb '+str(one_way('aabbc','aabb'))+':'+'True')
-
-
-print('aabbcc -> aabbccd '+str(one_way('aabbcc','aabbccd'))+':'+'True')
-print('aabbcc -> aabbcxcd '+str(one_way('aabbcc','aabbcxcd'))+':'+'False')
-print('aabbcc -> aabbccc '+str(one_way('aabbcc','aabbccc'))+':'+'True')
-
+print('aabbcc -> aabbccd ' + str(one_way('aabbcc', 'aabbccd')) + ':' + 'True')
+print('aabbcc -> aabbcxcd ' + str(one_way('aabbcc', 'aabbcxcd')) + ':' + 'False')
+print('aabbcc -> aabbccc ' + str(one_way('aabbcc', 'aabbccc')) + ':' + 'True')

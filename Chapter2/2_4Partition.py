@@ -7,7 +7,8 @@ link_list.add_node(3)
 link_list.add_node(1)
 link_list.add_node(2)
 
-def partition_around_x(link_list,value):
+
+def partition_around_x(link_list, value):
     lower_x_list = LinkedList()
     equal_x_list = LinkedList()
     greater_x_list = LinkedList()
@@ -28,6 +29,7 @@ def partition_around_x(link_list,value):
     last_node_equal.next = greater_x_list.head
     link_list.head = lower_x_list.head
 
+
 link_list.print_list()
-partition_around_x(link_list,3)
+partition_around_x(link_list, 3)
 link_list.print_list()

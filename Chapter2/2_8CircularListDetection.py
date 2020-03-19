@@ -8,11 +8,12 @@ link_list.add_node('d')
 node_e = link_list.add_node('e')
 node_e.next = node_c
 
+
 def detect_start_node_cicle(head):
     list_dict = dict()
     runner = head
 
-    while (runner!=None):
+    while (runner != None):
 
         node_id = runner.__hash__()
 

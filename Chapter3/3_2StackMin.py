@@ -1,8 +1,9 @@
 class Node:
-    def __init__(self,data):
+    def __init__(self, data):
         self.data = data
         self.next = None
         self.min = None
+
 
 class StackMin:
 
@@ -10,7 +11,7 @@ class StackMin:
         self.head = None
         self.min = None
 
-    def add_node(self,data):
+    def add_node(self, data):
 
         if self.head == None:
             self.head = Node(data)
@@ -21,7 +22,7 @@ class StackMin:
             new_node.next = self.head
             self.head = new_node
 
-            if new_node.data  <  self.min.data:
+            if new_node.data < self.min.data:
                 temp = self.min
                 self.min = new_node
                 self.min.min = temp
@@ -48,6 +49,7 @@ class StackMin:
     def min_node(self):
         return self.min.data
 
+
 stackMin = StackMin()
 stackMin.add_node(5)
 stackMin.add_node(4)
@@ -56,7 +58,7 @@ stackMin.add_node(2)
 stackMin.add_node(1)
 stackMin.print_stack()
 
-print('Min:'+str(stackMin.min_node()))
+print('Min:' + str(stackMin.min_node()))
 stackMin2 = StackMin()
 stackMin2.add_node(5)
 stackMin2.add_node(4)
@@ -68,10 +70,10 @@ stackMin2.print_stack()
 print('#######################')
 stackMin2.pop()
 stackMin2.print_stack()
-print('Min:'+str(stackMin2.min_node()))
+print('Min:' + str(stackMin2.min_node()))
 stackMin2.pop()
 stackMin2.print_stack()
-print('Min:'+str(stackMin2.min_node()))
+print('Min:' + str(stackMin2.min_node()))
 
 print('#######################')
 stackMin3 = StackMin()
@@ -81,7 +83,7 @@ stackMin3.add_node(3)
 stackMin3.add_node(4)
 stackMin3.add_node(5)
 stackMin3.print_stack()
-print('Min:'+str(stackMin3.min_node()))
+print('Min:' + str(stackMin3.min_node()))
 stackMin3.pop()
 stackMin3.print_stack()
-print('Min:'+str(stackMin3.min_node()))
+print('Min:' + str(stackMin3.min_node()))

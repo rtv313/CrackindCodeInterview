@@ -9,8 +9,8 @@ link_list.add_node(1)
 link_list.add_node(2)
 link_list.add_node(3)
 
-def remove_duplicates(linked_list):
 
+def remove_duplicates(linked_list):
     current = link_list.head
 
     while current != None:
@@ -31,4 +31,3 @@ def remove_duplicates(linked_list):
 link_list.print_list()
 remove_duplicates(link_list)
 link_list.print_list()
-
