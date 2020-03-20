@@ -4,6 +4,7 @@ class Node:
         self.left_son = None
         self.right_son = None
 
+
 def create_tree(sorted_array,min_index,max_index):
 
     if max_index < min_index:
