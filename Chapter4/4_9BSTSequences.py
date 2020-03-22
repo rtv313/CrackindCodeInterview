@@ -28,7 +28,6 @@ def all_combinations(list_depths, level_index):
     result = list()
     next_level_combinations = all_combinations(list_depths, level_index + 1)
 
-
     for level in level_combinations:
 
         if next_level_combinations is None:
