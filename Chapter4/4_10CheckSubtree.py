@@ -1,5 +1,6 @@
 from Helper import Node, create_tree
 
+
 def pre_order_traversal(list,root):
 
     if root is not None:
@@ -8,6 +9,7 @@ def pre_order_traversal(list,root):
         pre_order_traversal(list,root.right_son)
     else:
         list.append('x')
+
 
 def check_is_sub_tree(root_one,root_two):
 
