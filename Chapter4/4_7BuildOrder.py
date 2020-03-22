@@ -1,3 +1,4 @@
+# Graphs for testing
 graph = {'a': [],
          'b': ['f'],
          'c': ['d'],
@@ -14,6 +15,19 @@ graph2 = {'a': [],
           'e': [],
           'f': ['a'],
           }
+
+# Function for build graph
+def build_graph(list_projects,list_dependencies):
+    graph = dict()
+
+    for node in list_projects:
+        graph[node] = list()
+
+    for dependency,actual_node in list_dependencies:
+        if graph[actual_node].count(dependency) == 0:
+            graph[actual_node].append(dependency)
+
+    return graph
 
 
 def build_order(graph):
@@ -44,6 +58,10 @@ def build_order(graph):
 
     return build_order_queue
 
+projects = ['a','b','c','d','e','f']
+dependencies=[('a','d'),('f','b'),('b','d'),('f','a'),('d','c')]
+b_graph = build_graph(projects,dependencies)
 
 build_order(graph)
 build_order(graph2)
+build_order(b_graph)
