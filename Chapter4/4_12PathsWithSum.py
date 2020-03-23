@@ -1,7 +1,7 @@
 from Helper import Node, create_tree
 
-def paths_with_sum(root_node,target,list_previous,list_results):
 
+def paths_with_sum(root_node, target, list_previous, list_results):
     if root_node is None:
         return
 
@@ -16,13 +16,14 @@ def paths_with_sum(root_node,target,list_previous,list_results):
         list_results.append(list_path)
         return
 
-    paths_with_sum(root_node.left_son,target,list_path,list_results)
+    paths_with_sum(root_node.left_son, target, list_path, list_results)
     paths_with_sum(root_node.right_son, target, list_path, list_results)
 
-def call_paths_with_sum(root,target):
+
+def call_paths_with_sum(root, target):
     list_previous = list()
     list_results = list()
-    paths_with_sum(root,target,list_previous,list_results)
+    paths_with_sum(root, target, list_previous, list_results)
 
     if len(list_results) == 0:
         print('There is no path for ' + str(target))
@@ -31,7 +32,8 @@ def call_paths_with_sum(root,target):
     for result in list_results:
         print(result)
 
+
 sorted_array = [0, 1, 2, 3, 4, 5, 6, 7]
 root_node_balanced = create_tree(sorted_array, 0, len(sorted_array) - 1)
 
-call_paths_with_sum(root_node_balanced,6)
+call_paths_with_sum(root_node_balanced, 6)
