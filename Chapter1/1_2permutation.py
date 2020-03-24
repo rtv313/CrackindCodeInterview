@@ -12,7 +12,7 @@ def check_permutation(string_one, string_two):
 
         set_one.add(char)
         if char in dict_one:
-            dict_one[char] + = 1
+            dict_one[char] += 1
         else:
             dict_one[char] = 1
 
