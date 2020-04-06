@@ -22,22 +22,12 @@ class Shelter:
     def enqueue(self,type):
 
         if type == 'Dog':
-
-            if len(self.dogs) == 0:
-                new_dog = Dog(self.counter)
-                self.dogs.append(new_dog)
-            else:
-                new_dog = Dog(self.counter)
-                self.dogs.append(new_dog)
+            new_dog = Dog(self.counter)
+            self.dogs.append(new_dog)
 
         if type == 'Cat':
-
-            if len(self.cats) == 0:
-                new_cat = Cat(self.counter)
-                self.cats.append(new_cat)
-            else:
-                new_cat = Cat(self.counter)
-                self.cats.append(new_cat)
+            new_cat = Cat(self.counter)
+            self.cats.append(new_cat)
 
         self.counter += 1
 
