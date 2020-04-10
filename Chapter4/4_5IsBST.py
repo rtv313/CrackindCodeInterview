@@ -29,7 +29,7 @@ def check_bst(root_node):
     if root_node.left_son == None and root_node.right_son != None and root_node.data <= get_min(root_node.right_son):
         return True and check_bst(root_node.right_son)
 
-    if root_node.left_son != None and root_node.right_son == None and root_node.data >= get_min(root_node.right_son):
+    if root_node.left_son != None and root_node.right_son == None and root_node.data >= get_max(root_node.left_son):
         return True and check_bst(root_node.left_son)
 
     max_value_left = get_max(root_node.left_son)

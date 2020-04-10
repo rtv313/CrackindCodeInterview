@@ -30,8 +30,11 @@ def get_min(node):
 
         if runner.left_son is not None:
             runner = runner.left_son
+            continue
+
         if runner.right_son is not None:
             runner = runner.right_son
+            continue
 
     return runner
 

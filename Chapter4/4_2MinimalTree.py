@@ -21,3 +21,4 @@ def create_tree(sorted_array, min_index, max_index):
 
 sorted_array = [0, 1, 2, 3, 4, 5, 6, 7]
 root_node = create_tree(sorted_array, 0, len(sorted_array) - 1)
+print(root_node.data)
