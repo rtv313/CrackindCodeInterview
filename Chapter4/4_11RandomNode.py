@@ -13,13 +13,13 @@ class BST:
 
     def __init__(self):
         self.root = None
-        self.nodes_dict = dict()
+        self.nodes_set = set()
 
     def insert(self, data):
 
         if self.root is None:
             self.root = Node(data,None)
-            self.nodes_dict[self.root.__hash__()] = self.root
+            self.nodes_set.add(self.root)
             return
 
         runner = self.root
@@ -29,13 +29,13 @@ class BST:
             if data <= runner.data:
                 if runner.left_son is None:
                     runner.left_son = Node(data,runner)
-                    self.nodes_dict[runner.left_son.__hash__()] = runner.left_son
+                    self.nodes_set.add(runner.left_son)
                     break
                 runner = runner.left_son
             else:
                 if runner.right_son is None:
                     runner.right_son = Node(data,runner)
-                    self.nodes_dict[runner.right_son .__hash__()] = runner.right_son
+                    self.nodes_set.add(runner.right_son)
                     break
                 runner = runner.right_son
 
@@ -94,7 +94,7 @@ class BST:
             else:
                 parent.right_son = None
 
-            del self.nodes_dict[node_to_delete.__hash__()]
+            self.nodes_set.remove(node_to_delete)
 
         # Node has only one child and is right son
         if node_to_delete.left_son is None and node_to_delete.right_son is not None:
@@ -106,7 +106,7 @@ class BST:
             else:
                 parent.right_son = node_to_delete.right_son
 
-            del self.nodes_dict[node_to_delete.__hash__()]
+            self.nodes_set.remove(node_to_delete)
 
         # Node has only one child and is left son
         if node_to_delete.left_son is not None and node_to_delete.right_son is None:
@@ -118,7 +118,7 @@ class BST:
             else:
                 parent.right_son = node_to_delete.left_son
 
-            del self.nodes_dict[node_to_delete.__hash__()]
+            self.nodes_set.remove(node_to_delete)
 
         # Node to delete has two children i need to find the min in the right son and replace
         if node_to_delete.left_son is not None and node_to_delete.right_son is not None:
@@ -132,12 +132,11 @@ class BST:
             else:
                 parent.right_son = None
 
-            del self.nodes_dict[min.__hash__()]
+            self.nodes_set.remove(min)
 
     def get_random_node(self):
-        selected_node = random.choice(list(self.nodes_dict.keys()))
-        node_selected = self.nodes_dict[selected_node]
-        return node_selected
+        selected_node = random.choice(list(self.nodes_set))
+        return selected_node
 
 
 tree = BST()
