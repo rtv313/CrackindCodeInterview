@@ -33,20 +33,15 @@ def get_ancestors_list(node):
 def find_common_ancestor(node_one, node_two):
     list_ancestors_one = get_ancestors_list(node_one)
     list_ancestors_two = get_ancestors_list(node_two)
-
     concatenate_lists = list_ancestors_one + list_ancestors_two
-
-    dictionary = dict()
+    nodesSet = set()
 
     for node in concatenate_lists:
 
-        if node.__hash__() in dictionary:
-            dictionary[node.__hash__()] += 1
-
-            if dictionary[node.__hash__()] == 2:
-                return node
+        if node in nodesSet:
+            return node
         else:
-            dictionary[node.__hash__()] = 1
+            nodesSet.add(node)
 
     return None
 

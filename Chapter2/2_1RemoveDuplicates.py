@@ -28,7 +28,6 @@ def remove_duplicates(linked_list):
                     else:
                         runner.next = None
 
-
             runner = runner.next
 
         current = current.next

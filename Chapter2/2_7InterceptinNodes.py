@@ -25,37 +25,19 @@ link_list_two.print_list()
 
 def check_list_intercept(head1,head2):
 
-    list_dict = dict()
-    list_dict_nodes = dict()
+    nodesSet = set()
     runner_one = head1
     runner_two = head2
 
-    while(runner_one!=None):
-        node_id = runner_one.__hash__()
-
-        if node_id in list_dict:
-            list_dict[node_id]+=1
-        else:
-            list_dict[node_id]=1
-            list_dict_nodes[node_id] = runner_one
-
+    while runner_one is not None:
+        nodesSet.add(runner_one)
         runner_one = runner_one.next
 
-    while (runner_two != None):
-        node_id = runner_two.__hash__()
-
-        if node_id in list_dict:
-            list_dict[node_id] += 1
-        else:
-            list_dict[node_id] = 1
-
+    while runner_two is not  None:
+        if runner_two in nodesSet:
+            return runner_two
         runner_two = runner_two.next
 
-    for key in list_dict.keys():
-
-        if list_dict[key] > 1:
-            print('The links intercepts')
-            return list_dict_nodes[key]
 
     print('The links not intercept')
     return None

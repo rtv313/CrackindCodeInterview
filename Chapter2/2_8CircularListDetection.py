@@ -10,20 +10,15 @@ node_e.next = node_c
 
 
 def detect_start_node_cicle(head):
-    list_dict = dict()
+    nodesSet = set()
     runner = head
 
     while (runner != None):
 
-        node_id = runner.__hash__()
-
-        if node_id in list_dict:
-            list_dict[node_id] += 1
-            if list_dict[node_id] > 1:
-                print(runner.data)
-                return runner
+        if runner in nodesSet:
+            return runner
         else:
-            list_dict[node_id] = 1
+            nodesSet.add(runner)
 
         runner = runner.next
 
@@ -31,4 +26,4 @@ def detect_start_node_cicle(head):
     return None
 
 
-detect_start_node_cicle(link_list.head)
+print(detect_start_node_cicle(link_list.head).data)
